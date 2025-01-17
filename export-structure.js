@@ -1,3 +1,8 @@
+// To run the script, run the following command: 
+/* 
+  node export-structure.js
+*/
+
 import { readdirSync, statSync, readFileSync, createWriteStream } from 'fs';
 import { join, relative } from 'path';
 
