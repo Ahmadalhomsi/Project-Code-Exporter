@@ -3,8 +3,8 @@
   node export-structure.js
 */
 
-import { readdirSync, statSync, readFileSync, createWriteStream } from 'fs';
-import { join, relative } from 'path';
+const { readdirSync, statSync, readFileSync, createWriteStream } = require('fs');
+const { join, relative } = require('path');
 
 // Directory to scan
 const dir = '.';
@@ -31,10 +31,10 @@ function writeStructure(directory, fileStream, prefix = '') {
     const newPrefix = prefix + (isLast ? '    ' : '│   ');
 
     if (stats.isDirectory()) {
-      fileStream.write(`${prefix}${isLast ? '└── ' : '├── '}${file}/\n`);
+      fileStream.write(${prefix}${isLast ? '└── ' : '├── '}${file}/\n);
       writeStructure(filePath, fileStream, newPrefix);
     } else {
-      fileStream.write(`${prefix}${isLast ? '└── ' : '├── '}${file}\n`);
+      fileStream.write(${prefix}${isLast ? '└── ' : '├── '}${file}\n);
     }
   });
 }
@@ -55,7 +55,7 @@ function writeFileContents(directory, fileStream) {
     if (stats.isDirectory()) {
       writeFileContents(filePath, fileStream);
     } else if (/\.(js|jsx|ts|tsx)$/.test(file)) {
-      fileStream.write(`\n------------ ${relativePath} ------------\n`);
+      fileStream.write(\n------------ ${relativePath} ------------\n);
       fileStream.write(readFileSync(filePath, 'utf-8') + '\n');
     }
   });
@@ -70,7 +70,7 @@ function exportStructure() {
   fileStream.write('\nFile Contents:\n');
   writeFileContents(dir, fileStream);
 
-  fileStream.end(() => console.log(`Done. The file is saved as ${outputFile}`));
+  fileStream.end(() => console.log(Done. The file is saved as ${outputFile}));
 }
 
 exportStructure();
