@@ -11,7 +11,7 @@ const dir = '.';
 // Output file
 const outputFile = 'file-structure-with-code.txt';
 // Directories to exclude
-const excludedDirs = ['.next', '.git', 'node_modules'];
+const excludedDirs = ['.next', '.git', 'node_modules', 'public', 'components\\ui', 'tailwind.config'];
 // File extensions to include (configurable)
 const includedExtensions = ['.js', '.jsx', '.ts', '.tsx']; // Add or remove extensions as needed
 
