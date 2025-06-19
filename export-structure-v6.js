@@ -1,6 +1,6 @@
 // To run the script, run the following command: 
 /* 
-  node export-structure.js
+  node export-structure-v6.js
 */
 
 const { readdirSync, statSync, readFileSync, createWriteStream } = require('fs');
